@@ -1,0 +1,91 @@
+%% Joshua Konieczny CV — moderncv
+%% Compile with: xelatex Joshua_Konieczny_CV_2026.tex
+
+\documentclass[10pt,a4paper,sans]{moderncv}
+
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.88]{geometry}
+\usepackage{fontawesome5}
+
+\name{Joshua}{Konieczny}
+\email{joshua.konieczny@gmail.com}
+\phone[mobile]{(419)~349-5766}
+\address{849 Breton Lakes Dr, Willowbrook, IL 60527}{}{}
+\social[github]{jkonieczny2}
+
+\nopagenumbers{}
+
+\begin{document}
+
+\makecvtitle
+
+% ─── Work experience ──────────────────────────────────────────
+\section{Work experience}
+
+\textit{Technology: Python, C++, JavaScript/TypeScript, SQL, Bash, React, Git, Terraform, Docker, Kubernetes, PostgreSQL}
+
+\bigskip
+
+\cventry{Sep 2019 -- Aug 2025}{Quantitative Technologist}{Radix Trading, LLC}{Chicago, IL}{}{}
+\cvlistitem{Wrote extensive Python automation for deployment, monitoring, and optimization of production-critical trading software}
+\cvlistitem{Developed market data parsers, drop copy services, and data collection pipelines in C++; reduced max download time from 9 hours to 15 minutes}
+\cvlistitem{Redesigned third-party trade reconciliation processes, reducing error rate and maintenance burden by over 90\%}
+\cvlistitem{Maintained and optimized CI/CD system, achieving 60\% reduction in test suite runtime and cutting release time from 3 hours to 30 minutes}
+\cvlistitem{Introduced Terraform for cloud management, enabling rapid deployment and savings of \$65K per month}
+\cvlistitem{Implemented GitLFS to track large binary files, saving multiple gigabytes in a large Git monorepo}
+
+\textit{Technology: Python, C++, Terraform, Git, Bash, Docker, CI/CD}
+
+\bigskip
+
+\cventry{Dec 2017 -- Sep 2019}{Enterprise Platform Specialist}{BMO Harris Bank}{Chicago, IL}{}{}
+\cvlistitem{Built and deployed ETL pipelines using Hive, Spark, and HDFS}
+\cvlistitem{Wrote Java-based SQL query analyzer to track provenance of ETL transformations}
+\cvlistitem{Deployed AWS platform to host experimental machine learning workflows for multiple teams}
+
+\textit{Technology: Java, Hive, Spark, HDFS, AWS, SQL}
+
+\bigskip
+
+\cventry{Apr 2016 -- Dec 2017}{Solutions Engineer}{Cambridge Semantics, Inc.}{Boston, MA}{}{}
+\cvlistitem{Developed proof-of-concepts and deployed systems that improved metadata management, data integration, and unstructured data processing for major clients such as Eli Lilly and BMO Harris}
+
+\bigskip
+
+\cventry{Sep 2015 -- Mar 2016}{Research Analyst}{Burning Glass Technologies}{Boston, MA}{}{}
+\cvlistitem{Analyzed real-time labor market data using SQL, R, and Python to help educators and businesses identify skills gaps, guide curriculum development, and improve hiring practices}
+
+% ─── Education ────────────────────────────────────────────────
+\section{Education}
+
+\cventry{2009 -- 2013}{B.A. in Economics, GPA 3.87/4.00, \textit{magna cum laude}}{Dartmouth College}{Hanover, NH}{}{}
+\cvlistitem{Phi Beta Kappa; Varsity Lightweight Rowing (Captain 2013); Academic All-Ivy Honors 2012--2013}
+
+% ─── Projects ─────────────────────────────────────────────────
+\section{Projects}
+
+\cventry{Sep 2025}{}{Kubernetes Cluster}{}{}{}
+\cvlistitem{Leveraged Terraform and Salt to automatically provision clusters on bare-metal AWS}
+\cvlistitem{Configured and deployed HA Postgres database on cluster for personal use}
+
+\textit{Technology: Terraform, Salt, AWS, Kubernetes, PostgreSQL}
+
+\bigskip
+
+\cventry{Oct 2025 -- Mar 2026}{}{Construction Project Management}{}{}{}
+\cvlistitem{Developed full-stack application to manage cost estimates for construction projects}
+\cvlistitem{Implemented Django REST Framework backend and interactive React frontend}
+\cvlistitem{Deployed containerized app on cloud using PostgreSQL for storage}
+
+\textit{Technology: Python, Django, React, Docker, PostgreSQL}
+
+% ─── Leadership and achievements ──────────────────────────────
+\section{Leadership and achievements}
+
+\cventry{2013 -- 2016}{}{United States Rowing Team}{}{}{}
+\cvlistitem{5th place in Lightweight Double at 2016 Olympic Games in Rio de Janeiro, Brazil}
+
+\end{document}
