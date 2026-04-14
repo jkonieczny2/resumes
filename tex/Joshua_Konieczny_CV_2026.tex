@@ -77,47 +77,54 @@
 
 % ─── Work experience ──────────────────────────────────────────
 \section{Work experience}
-\vspace{-0.5em}
-\textbf{\textit{Technology}} \textit{Python, C++, JavaScript/TypeScript, SQL, Bash, React, Git, Terraform, Docker, Kubernetes, PostgreSQL}
-
-\vspace{0.4em}
 
 \cventry{Sep 2019 -- Aug 2025}{Quantitative Technologist}{\textcolor[rgb]{0,0,1}{Radix Trading, LLC}}{Chicago, IL}{}{}
 \begin{itemize}
-  \item Wrote extensive Python automation for deployment, monitoring, and optimization of production-critical trading software
-  \item Developed market data parsers, drop copy services, and data collection pipelines in C++; reduced max download time from 9 hours to 15 minutes
-  \item Redesigned third-party trade reconciliation processes, reducing error rate and maintenance burden by over 90\%
+  \item As part of a global operations team, leveraged Linux system administration, Prometheus monitoring, and Python scripting to identify and resolve trading software outages and misconfigurations in real time
   \item Maintained and optimized CI/CD system, achieving 60\% reduction in test suite runtime and cutting release time from 3 hours to 30 minutes
-  \item Introduced Terraform for cloud management, enabling rapid deployment and savings of \$65K per month
+  \item Introduced Terraform for cloud management, enabling rapid configuration and deployment of optimizations such as hardware timestamps, clock synchronization, and cross-region networking while simultaneously reducing overprovisioning and saving \$65K per month
   \item Implemented GitLFS to track large binary files, saving multiple gigabytes in a large Git monorepo
+  \item Optimized internal- and external-facing trade reconciliation processes, reducing error rate and maintenance burden by over 90\%
+  \item Designed, implemented, and optimized trade surveillance pipelines using Python, C++, Slurm, and Airflow; achieved order-of-magnitude performance improvements while processing hundreds of gigabytes of data
+  \item Redesigned market data collection pipeline using C++, Python, and Slurm; reduced maximum download time from 9 hours to 15 minutes
+  \item Developed and deployed core trading system components in C++, including market data parsers, drop copy services, and market data collection algorithms
 \end{itemize}
 \vspace{0.2em}
-\textbf{\textit{Technology}} \textit{Python, C++, Terraform, Git, Bash, Docker, CI/CD}
+\textbf{\textit{Technology}} \textit{Linux, Python, C++, Prometheus, Terraform, Git, Bash, Slurm, Airflow, CI/CD}
 
 \vspace{0.4em}
 
 \cventry{Dec 2017 -- Sep 2019}{Enterprise Platform Specialist}{\textcolor[rgb]{0,0,1}{BMO Harris Bank}}{Chicago, IL}{}{}
 \begin{itemize}
-  \item Built and deployed ETL pipelines using Hive, Spark, and HDFS
-  \item Wrote Java-based SQL query analyzer to track provenance of ETL transformations
-  \item Deployed AWS platform to host experimental machine learning workflows for multiple teams
+  \item Built and deployed ETL pipelines to transform source data to data warehouse schema using Hive, Spark, and HDFS
+  \item Optimized and troubleshot coworkers' machine learning pipelines, halving runtime via effective use of Spark cluster
+  \item Wrote query analyzer in Java to automatically track data provenance of arbitrary SQL queries
+  \item Configured and provisioned AWS EC2 instance to host firm-wide machine learning 'hackathon'
 \end{itemize}
 \vspace{0.2em}
-\textbf{\textit{Technology}} \textit{Java, Hive, Spark, HDFS, AWS, SQL}
+\textbf{\textit{Technology}} \textit{Java, Spark, PySpark, Hive, HDFS, AWS, SQL}
 
 \vspace{0.4em}
 
 \cventry{Apr 2016 -- Dec 2017}{Solutions Engineer}{\textcolor[rgb]{0,0,1}{Cambridge Semantics, Inc.}}{Boston, MA}{}{}
 \begin{itemize}
-  \item Developed proof-of-concepts and deployed systems that improved metadata management, data integration, and unstructured data processing for major clients such as Eli Lilly and BMO Harris
+  \item Designed and implemented solutions to enhance metadata management using Cambridge Semantics' semantic web data platform
+  \item Leveraged Bash scripting, SPARQL queries, and event-based triggering to automatically generate clinical trials projects using standardized ontology for Eli Lilly; eliminated manual data setup entirely
+  \item Built ontology for BMO Harris Bank to represent transformation from source data to data warehouse schema, leading to BMO's adoption of Cambridge Semantics' proprietary platform
 \end{itemize}
+\vspace{0.2em}
+\textbf{\textit{Technology}} \textit{RDF, SPARQL, Bash}
 
 \vspace{0.4em}
 
 \cventry{Sep 2015 -- Mar 2016}{Research Analyst}{\textcolor[rgb]{0,0,1}{Burning Glass Technologies}}{Boston, MA}{}{}
 \begin{itemize}
   \item Analyzed real-time labor market data using SQL, R, and Python to help educators and businesses identify skills gaps, guide curriculum development, and improve hiring practices
+  \item Conducted deep analysis of HVAC hiring market; identified significant frictions such as state-specific licensing requirements and presented findings to national advisory board
+  \item Advised and trained coworkers in R and Python development, reducing time to perform analysis from hours to minutes
 \end{itemize}
+\vspace{0.2em}
+\textbf{\textit{Technology}} \textit{R, Python, SQL}
 
 % ─── Education ────────────────────────────────────────────────
 \section{Education}
@@ -132,7 +139,9 @@
 
 {\fontsize{9}{10.8}\selectfont\bfseries\textcolor[rgb]{0,0,1}{United States Rowing Team}} \hfill {2013 -- 2016}
 \begin{itemize}
-  \item 5th place in Lightweight Double at 2016 Olympic Games in Rio de Janeiro, Brazil
+  \item Member of the United States National Rowing Team from 2013--2016
+  \item Trained 4-6 hours per day while maintaining a 30-40 hour weekly work schedule
+  \item Competed in the 2016 Olympic Games in Rio de Janeiro, achieving the United States' highest-ever 5th place finish in the Lightweight Double Sculls category
 \end{itemize}
 
 % ─── Projects ─────────────────────────────────────────────────
@@ -140,21 +149,23 @@
 
 {\fontsize{9}{10.8}\selectfont\bfseries\textcolor[rgb]{0,0,1}{Construction Project Management}}
 \begin{itemize}
-  \item Developed full-stack application to manage cost estimates for construction projects
-  \item Implemented Django REST Framework backend and interactive React frontend
-  \item Deployed containerized app on cloud using PostgreSQL for storage
+  \item Developed full-stack web application to manage construction project estimates for a local business
+  \item Implemented key features to enable collaborative project management, including conflict resolution and version control
+  \item Designed headless deployment with Django REST Framework backend and Typescript/React frontend
+  \item Deployed highly-available and fault-tolerant containerized app on cloud infrastructure using an Nginx proxy and PostgreSQL backend
 \end{itemize}
 \vspace{0.2em}
-\textbf{\textit{Technology}} \textit{Python, Django, React, Docker, PostgreSQL}
+\textbf{\textit{Technology}} \textit{Python, Typescript, Django, Django REST Framework, React, Docker, PostgreSQL, Nginx}
 
 \vspace{0.4em}
 
 {\fontsize{9}{10.8}\selectfont\bfseries\textcolor[rgb]{0,0,1}{Kubernetes Cluster}}
 \begin{itemize}
-  \item Leveraged Terraform and Salt to automatically provision clusters on bare-metal AWS
-  \item Configured and deployed HA Postgres database on cluster for personal use
+  \item Leveraged Terraform, Salt, and Bash scripts to provision and deprovision Kubernetes clusters on AWS EC2 instances within seconds
+  \item Automated all aspects of Kubernetes installation, including software downloads, systemd service management, and cluster network configuration
+  \item Used Postgres Operator pattern to configure and deploy highly-available PostgreSQL instance hosted on Kubernetes cluster and backed by AWS EBS
 \end{itemize}
 \vspace{0.2em}
-\textbf{\textit{Technology}} \textit{Terraform, Salt, AWS, Kubernetes, PostgreSQL}
+\textbf{\textit{Technology}} \textit{Terraform, Salt, Bash, Linux, AWS, Kubernetes, PostgreSQL}
 
 \end{document}
