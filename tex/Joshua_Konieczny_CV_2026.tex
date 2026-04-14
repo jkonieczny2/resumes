@@ -49,7 +49,7 @@
       and
       test {\ifstrempty{#2}}}%
       {}%
-      {{\bfseries #4} & {#2}\\}%
+      {{\fontsize{9}{10.8}\selectfont\bfseries #4} & {#2}\\}%
     {\itshape #3\ifstrempty{#6}{}{, #6}} & {\itshape #5}\\%
   \end{tabular*}%
   \ifx&#7&%
@@ -127,10 +127,18 @@
   \item Phi Beta Kappa; Varsity Lightweight Rowing (Captain 2013); Academic All-Ivy Honors 2012--2013
 \end{itemize}
 
+% ─── Leadership and achievements ──────────────────────────────
+\section{Leadership and achievements}
+
+{\fontsize{9}{10.8}\selectfont\bfseries\textcolor[rgb]{0,0,1}{United States Rowing Team}} \hfill {2013 -- 2016}
+\begin{itemize}
+  \item 5th place in Lightweight Double at 2016 Olympic Games in Rio de Janeiro, Brazil
+\end{itemize}
+
 % ─── Projects ─────────────────────────────────────────────────
 \section{Projects}
 
-{\bfseries\textcolor[rgb]{0,0,1}{Construction Project Management}}
+{\fontsize{9}{10.8}\selectfont\bfseries\textcolor[rgb]{0,0,1}{Construction Project Management}}
 \begin{itemize}
   \item Developed full-stack application to manage cost estimates for construction projects
   \item Implemented Django REST Framework backend and interactive React frontend
@@ -141,20 +149,12 @@
 
 \vspace{0.4em}
 
-{\bfseries\textcolor[rgb]{0,0,1}{Kubernetes Cluster}}
+{\fontsize{9}{10.8}\selectfont\bfseries\textcolor[rgb]{0,0,1}{Kubernetes Cluster}}
 \begin{itemize}
   \item Leveraged Terraform and Salt to automatically provision clusters on bare-metal AWS
   \item Configured and deployed HA Postgres database on cluster for personal use
 \end{itemize}
 \vspace{0.2em}
 \textbf{\textit{Technology}} \textit{Terraform, Salt, AWS, Kubernetes, PostgreSQL}
-
-% ─── Leadership and achievements ──────────────────────────────
-\section{Leadership and achievements}
-
-{\bfseries\textcolor[rgb]{0,0,1}{United States Rowing Team}} \hfill {2013 -- 2016}
-\begin{itemize}
-  \item 5th place in Lightweight Double at 2016 Olympic Games in Rio de Janeiro, Brazil
-\end{itemize}
 
 \end{document}
