@@ -1,91 +1,160 @@
-%% Joshua Konieczny CV — moderncv
+%% Joshua Konieczny CV — moderncv (banking style, matching mikina format)
 %% Compile with: xelatex Joshua_Konieczny_CV_2026.tex
 
-\documentclass[10pt,a4paper,sans]{moderncv}
+\documentclass[10pt,a4paper]{moderncv}
 
-\moderncvstyle{classic}
+\moderncvstyle{banking}
 \moderncvcolor{blue}
 
 \usepackage[utf8]{inputenc}
-\usepackage[scale=0.88]{geometry}
+\usepackage[top=1.2cm, bottom=1.2cm, left=1.4cm, right=1.4cm]{geometry}
 \usepackage{fontawesome5}
+
+\renewcommand*{\sectionfont}{\fontsize{11}{13}\selectfont\mdseries\scshape}
+\renewcommand*{\sectionstyle}[1]{{\sectionfont\textcolor[rgb]{0,0,1}{#1}}}
+
+\renewcommand*{\addresssymbol}{\faHome~}
+
+\renewcommand{\labelitemi}{\textbullet}
+
+\renewcommand*{\namefont}{\fontsize{13}{15}\selectfont\bfseries\upshape}
+\renewcommand*{\firstnamestyle}[1]{{\namefont\color{black}#1}}
+\renewcommand*{\lastnamestyle}[1]{{\namefont\color{black}#1}}
+
+\usepackage{graphicx}
+\newcommand*{\contactsep}{\hspace{0.8em}}
+
+\makeatletter
+\renewcommand*{\makehead}{%
+  \parbox{\textwidth}{%
+    \centering%
+    \firstnamestyle{\@firstname\ }\lastnamestyle{\@lastname}%
+    \ifthenelse{\equal{\@title}{}}{}{\titlestyle{~|~\@title}}%
+    \if@details{%
+      \\[0.6em]%
+      \resizebox{0.88\textwidth}{!}{%
+        \color{addresscolor}%
+        \emailsymbol\emaillink{\@email}%
+        \contactsep\mobilephonesymbol\collectionloop{phones}{\collectionloopitem}%
+        \contactsep\addresssymbol\@addressstreet%
+        \contactsep\githubsocialsymbol\textcolor[rgb]{0,0,1}{\href{https://github.com/jkonieczny2}{github.com/jkonieczny2}}}%
+    }\fi}}
+\makeatother
+
+\usepackage{etoolbox}
+\renewcommand*{\cventry}[7][.25em]{%
+  \begin{tabular*}{\maincolumnwidth}{l@{\extracolsep{\fill}}r}%
+    \ifboolexpr{%
+      test {\ifstrempty{#4}}
+      and
+      test {\ifstrempty{#2}}}%
+      {}%
+      {{\bfseries #4} & {#2}\\}%
+    {\itshape #3\ifstrempty{#6}{}{, #6}} & {\itshape #5}\\%
+  \end{tabular*}%
+  \ifx&#7&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#7%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\setlength{\hintscolumnwidth}{0cm}
 
 \name{Joshua}{Konieczny}
 \email{joshua.konieczny@gmail.com}
 \phone[mobile]{(419)~349-5766}
 \address{849 Breton Lakes Dr, Willowbrook, IL 60527}{}{}
-\social[github]{jkonieczny2}
+\social[github][https://github.com/jkonieczny2]{github.com/jkonieczny2}
 
 \nopagenumbers{}
 
 \begin{document}
 
 \makecvtitle
+\vspace{-2.6em}
+\fontsize{8}{9.6}\selectfont
 
 % ─── Work experience ──────────────────────────────────────────
 \section{Work experience}
+\vspace{-0.5em}
+\textbf{\textit{Technology}} \textit{Python, C++, JavaScript/TypeScript, SQL, Bash, React, Git, Terraform, Docker, Kubernetes, PostgreSQL}
 
-\textit{Technology: Python, C++, JavaScript/TypeScript, SQL, Bash, React, Git, Terraform, Docker, Kubernetes, PostgreSQL}
+\vspace{0.4em}
 
-\bigskip
+\cventry{Sep 2019 -- Aug 2025}{Quantitative Technologist}{\textcolor[rgb]{0,0,1}{Radix Trading, LLC}}{Chicago, IL}{}{}
+\begin{itemize}
+  \item Wrote extensive Python automation for deployment, monitoring, and optimization of production-critical trading software
+  \item Developed market data parsers, drop copy services, and data collection pipelines in C++; reduced max download time from 9 hours to 15 minutes
+  \item Redesigned third-party trade reconciliation processes, reducing error rate and maintenance burden by over 90\%
+  \item Maintained and optimized CI/CD system, achieving 60\% reduction in test suite runtime and cutting release time from 3 hours to 30 minutes
+  \item Introduced Terraform for cloud management, enabling rapid deployment and savings of \$65K per month
+  \item Implemented GitLFS to track large binary files, saving multiple gigabytes in a large Git monorepo
+\end{itemize}
+\vspace{0.2em}
+\textbf{\textit{Technology}} \textit{Python, C++, Terraform, Git, Bash, Docker, CI/CD}
 
-\cventry{Sep 2019 -- Aug 2025}{Quantitative Technologist}{Radix Trading, LLC}{Chicago, IL}{}{}
-\cvlistitem{Wrote extensive Python automation for deployment, monitoring, and optimization of production-critical trading software}
-\cvlistitem{Developed market data parsers, drop copy services, and data collection pipelines in C++; reduced max download time from 9 hours to 15 minutes}
-\cvlistitem{Redesigned third-party trade reconciliation processes, reducing error rate and maintenance burden by over 90\%}
-\cvlistitem{Maintained and optimized CI/CD system, achieving 60\% reduction in test suite runtime and cutting release time from 3 hours to 30 minutes}
-\cvlistitem{Introduced Terraform for cloud management, enabling rapid deployment and savings of \$65K per month}
-\cvlistitem{Implemented GitLFS to track large binary files, saving multiple gigabytes in a large Git monorepo}
+\vspace{0.4em}
 
-\textit{Technology: Python, C++, Terraform, Git, Bash, Docker, CI/CD}
+\cventry{Dec 2017 -- Sep 2019}{Enterprise Platform Specialist}{\textcolor[rgb]{0,0,1}{BMO Harris Bank}}{Chicago, IL}{}{}
+\begin{itemize}
+  \item Built and deployed ETL pipelines using Hive, Spark, and HDFS
+  \item Wrote Java-based SQL query analyzer to track provenance of ETL transformations
+  \item Deployed AWS platform to host experimental machine learning workflows for multiple teams
+\end{itemize}
+\vspace{0.2em}
+\textbf{\textit{Technology}} \textit{Java, Hive, Spark, HDFS, AWS, SQL}
 
-\bigskip
+\vspace{0.4em}
 
-\cventry{Dec 2017 -- Sep 2019}{Enterprise Platform Specialist}{BMO Harris Bank}{Chicago, IL}{}{}
-\cvlistitem{Built and deployed ETL pipelines using Hive, Spark, and HDFS}
-\cvlistitem{Wrote Java-based SQL query analyzer to track provenance of ETL transformations}
-\cvlistitem{Deployed AWS platform to host experimental machine learning workflows for multiple teams}
+\cventry{Apr 2016 -- Dec 2017}{Solutions Engineer}{\textcolor[rgb]{0,0,1}{Cambridge Semantics, Inc.}}{Boston, MA}{}{}
+\begin{itemize}
+  \item Developed proof-of-concepts and deployed systems that improved metadata management, data integration, and unstructured data processing for major clients such as Eli Lilly and BMO Harris
+\end{itemize}
 
-\textit{Technology: Java, Hive, Spark, HDFS, AWS, SQL}
+\vspace{0.4em}
 
-\bigskip
-
-\cventry{Apr 2016 -- Dec 2017}{Solutions Engineer}{Cambridge Semantics, Inc.}{Boston, MA}{}{}
-\cvlistitem{Developed proof-of-concepts and deployed systems that improved metadata management, data integration, and unstructured data processing for major clients such as Eli Lilly and BMO Harris}
-
-\bigskip
-
-\cventry{Sep 2015 -- Mar 2016}{Research Analyst}{Burning Glass Technologies}{Boston, MA}{}{}
-\cvlistitem{Analyzed real-time labor market data using SQL, R, and Python to help educators and businesses identify skills gaps, guide curriculum development, and improve hiring practices}
+\cventry{Sep 2015 -- Mar 2016}{Research Analyst}{\textcolor[rgb]{0,0,1}{Burning Glass Technologies}}{Boston, MA}{}{}
+\begin{itemize}
+  \item Analyzed real-time labor market data using SQL, R, and Python to help educators and businesses identify skills gaps, guide curriculum development, and improve hiring practices
+\end{itemize}
 
 % ─── Education ────────────────────────────────────────────────
 \section{Education}
 
-\cventry{2009 -- 2013}{B.A. in Economics, GPA 3.87/4.00, \textit{magna cum laude}}{Dartmouth College}{Hanover, NH}{}{}
-\cvlistitem{Phi Beta Kappa; Varsity Lightweight Rowing (Captain 2013); Academic All-Ivy Honors 2012--2013}
+\cventry{2009 -- 2013}{B.A. in Economics, GPA 3.87/4.00, \textit{magna cum laude}}{\textcolor[rgb]{0,0,1}{Dartmouth College}}{Hanover, NH}{}{}
+\begin{itemize}
+  \item Phi Beta Kappa; Varsity Lightweight Rowing (Captain 2013); Academic All-Ivy Honors 2012--2013
+\end{itemize}
 
 % ─── Projects ─────────────────────────────────────────────────
 \section{Projects}
 
-\cventry{Sep 2025}{}{Kubernetes Cluster}{}{}{}
-\cvlistitem{Leveraged Terraform and Salt to automatically provision clusters on bare-metal AWS}
-\cvlistitem{Configured and deployed HA Postgres database on cluster for personal use}
+{\bfseries\textcolor[rgb]{0,0,1}{Construction Project Management}}
+\begin{itemize}
+  \item Developed full-stack application to manage cost estimates for construction projects
+  \item Implemented Django REST Framework backend and interactive React frontend
+  \item Deployed containerized app on cloud using PostgreSQL for storage
+\end{itemize}
+\vspace{0.2em}
+\textbf{\textit{Technology}} \textit{Python, Django, React, Docker, PostgreSQL}
 
-\textit{Technology: Terraform, Salt, AWS, Kubernetes, PostgreSQL}
+\vspace{0.4em}
 
-\bigskip
-
-\cventry{Oct 2025 -- Mar 2026}{}{Construction Project Management}{}{}{}
-\cvlistitem{Developed full-stack application to manage cost estimates for construction projects}
-\cvlistitem{Implemented Django REST Framework backend and interactive React frontend}
-\cvlistitem{Deployed containerized app on cloud using PostgreSQL for storage}
-
-\textit{Technology: Python, Django, React, Docker, PostgreSQL}
+{\bfseries\textcolor[rgb]{0,0,1}{Kubernetes Cluster}}
+\begin{itemize}
+  \item Leveraged Terraform and Salt to automatically provision clusters on bare-metal AWS
+  \item Configured and deployed HA Postgres database on cluster for personal use
+\end{itemize}
+\vspace{0.2em}
+\textbf{\textit{Technology}} \textit{Terraform, Salt, AWS, Kubernetes, PostgreSQL}
 
 % ─── Leadership and achievements ──────────────────────────────
 \section{Leadership and achievements}
 
-\cventry{2013 -- 2016}{}{United States Rowing Team}{}{}{}
-\cvlistitem{5th place in Lightweight Double at 2016 Olympic Games in Rio de Janeiro, Brazil}
+{\bfseries\textcolor[rgb]{0,0,1}{United States Rowing Team}} \hfill {2013 -- 2016}
+\begin{itemize}
+  \item 5th place in Lightweight Double at 2016 Olympic Games in Rio de Janeiro, Brazil
+\end{itemize}
 
 \end{document}

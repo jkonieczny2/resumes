@@ -21,4 +21,7 @@ eval "$(/usr/libexec/path_helper)"
 
 echo "Generating file ${2} from .tex source ${1}"
 
-xelatex "$1" "$2"
+rm -f "$2"
+
+output_name="$(basename "${2%.pdf}")"
+xelatex -output-directory="$output_dir" -jobname="$output_name" "$1"
